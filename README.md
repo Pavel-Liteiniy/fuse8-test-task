@@ -1,3 +1,11 @@
+
+# Тестовое задание для [fuse8](https://fuse8.ru/) ([live demo](https://pavel-liteiniy.github.io/fuse8-test-task/))
+
+### [Задание](https://docs.google.com/document/d/1fYGA9suVhgd7ewyNzPOL__w5yKkMyjpw-hmHDN9fKWQ/edit?usp=sharing)
+### [Макет в Figma](https://www.figma.com/file/UMpkpdwZJkuIRsntU1rS9I/UI-Dev---test-task-2-(Copy)?node-id=0%3A1)
+
+---
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
