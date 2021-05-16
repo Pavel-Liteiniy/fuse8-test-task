@@ -1,0 +1,7 @@
+@import 'variables';
+
+.wrapper {
+	max-width: $content_width_deskop;
+	padding: $basic_padding;
+	margin: 0 auto;
+}

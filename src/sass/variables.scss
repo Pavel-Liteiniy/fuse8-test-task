@@ -1,0 +1,40 @@
+$font_family_open_sans: 'open-sans', 'arial', sans-serif;
+
+$main_title_font_size: 36px;
+$main_title_line_height: 49px;
+
+$card_title_font_size: 20px;
+$card_title_line_height: 27px;
+
+$basic_font_size: 16px;
+$basic_line_height: 22px;
+$extra_line_height: 24px;
+
+$option_font_size: 14px;
+$option_line_height: 19px;
+
+$label_font_size: 12px;
+$label_line_height: 16px;
+
+$white: #ffffff;
+$white_smoke: #f8f8f8;
+$grey: #d8d8d8;
+$black: #363636;
+$green: #45852d;
+$deep_green: #006f79;
+$orange: #ec6608;
+
+$hover_opacity: 0.6;
+$active_opacity: 0.3;
+
+$border_default: 1px solid $grey;
+$border_extra: 2px solid $black;
+
+$breakpoint_mobile: 320px;
+$breakpoint_tablet: 768px;
+$breakpoint_desktop: 1024px;
+
+$basic_padding: 10px;
+
+$content_width_mobile: 320px - $basic_padding * 2;
+$content_width_deskop: 1180px + $basic_padding * 2;
