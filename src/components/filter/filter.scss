@@ -1,0 +1,44 @@
+@import '../../sass/variables';
+@import '../../sass/mixins';
+
+.filter {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: stretch;
+
+	label {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		padding-right: 17px;
+
+		font-weight: bold;
+		line-height: $extra_line_height;
+		letter-spacing: -0.3px;
+	}
+
+	input {
+		@include only_desktop {
+			&:hover,
+			&:focus {
+				border-color: $black;
+				outline: none;
+			}
+		}
+
+		flex-grow: 1;
+		max-width: 418px;
+		min-height: 50px;
+		padding: 10px 20px;
+
+		font-size: inherit;
+		line-height: inherit;
+
+		border: $border_default;
+		border-radius: 25px;
+
+		transition-duration: 100ms;
+	}
+}
