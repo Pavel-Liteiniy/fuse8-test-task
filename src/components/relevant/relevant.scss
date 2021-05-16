@@ -1,0 +1,128 @@
+@import '../../sass/variables';
+@import '../../sass/mixins';
+
+.relevant__wrapper {
+	@include for_tablet {
+		padding-bottom: 30px;
+	}
+
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: stretch;
+	align-content: stretch;
+
+	padding-bottom: 77px;
+}
+
+.relevant__title {
+	@include for_tablet {
+		padding: 20px 30px;
+	}
+	@include for_mobile {
+		padding: 10px 20px;
+
+		font-size: $main_title_font_size * 0.8;
+		line-height: $main_title_line_height * 0.8;
+	}
+
+	padding: 26px 72px 44px 50px;
+	margin: 0;
+
+	font-size: $main_title_font_size;
+	font-weight: bold;
+	line-height: $main_title_line_height;
+	text-align: center;
+
+	color: $green;
+}
+
+.relevant__filter {
+	@include for_mobile {
+		margin-bottom: 20px;
+	}
+
+	margin-bottom: 45px;
+}
+
+.relevant__list {
+	@include for_tablet {
+		margin-bottom: 20px;
+
+		column-gap: 20px;
+
+		row-gap: 20px;
+	}
+
+	display: grid;
+	justify-content: center;
+	align-items: start;
+
+	padding: 0;
+	margin: 0 0 61px;
+
+	list-style: none;
+
+	column-gap: 21px;
+
+	grid-template-columns: repeat(auto-fill, minmax($content_width_mobile, 379px));
+	row-gap: 37px;
+}
+
+.relevant__button {
+	@include only_desktop {
+		&:hover,
+		&:focus {
+			opacity: $hover_opacity;
+
+			outline: none;
+
+			&::before {
+				transform: translateY(-50%) translateX(2px);
+			}
+		}
+
+		&:active {
+			opacity: $active_opacity;
+		}
+	}
+
+	position: relative;
+
+	align-self: center;
+
+	padding: 11px 44px 13px 32px;
+	margin-right: 24px;
+
+	font-weight: bold;
+	line-height: $extra_line_height;
+	letter-spacing: -0.3px;
+	text-decoration: none;
+
+	color: $black;
+
+	border: $border_default;
+	border-radius: 25px;
+
+	transition-duration: 100ms;
+
+	&::before {
+		position: absolute;
+		top: 50%;
+		right: 27px;
+
+		width: 8px;
+		height: 18px;
+
+		content: '';
+
+		background-image: url('./icon-arrow.svg');
+		background-position: 50% 50%;
+		background-repeat: no-repeat;
+
+		transform: translateY(-50%);
+
+		transition-duration: 200ms;
+	}
+}
