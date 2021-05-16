@@ -1,0 +1,98 @@
+@import '../../sass/variables';
+@import '../../sass/mixins';
+
+.card {
+	@include only_desktop {
+		&:hover,
+		&:focus {
+			outline: none;
+			box-shadow: 0 5px 10px 1px $grey;
+
+			transform: translateY(-5px);
+		}
+
+		&:active {
+			box-shadow: none;
+
+			transform: translateY(0);
+		}
+	}
+
+	display: block;
+
+	text-decoration: none;
+
+	color: $black;
+	background-color: $white_smoke;
+
+	border: $border_default;
+
+	transition-duration: 300ms;
+}
+
+.card__image {
+	position: relative;
+
+	line-height: 0;
+
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+}
+
+.card__label {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+
+	padding: 9px 11px 6px;
+	margin: 0;
+
+	font-size: $label_font_size;
+	font-weight: bold;
+	line-height: $label_line_height;
+	text-align: center;
+
+	color: $white;
+
+	&--living {
+		background-color: $deep_green;
+	}
+
+	&--business {
+		background-color: $orange;
+	}
+}
+
+.card__description {
+	padding: 20px 20px 17px;
+}
+
+.card__title {
+	margin: 0 0 2px;
+
+	font-size: $card_title_font_size;
+	line-height: $card_title_line_height;
+}
+
+.card__address {
+	margin: 0 0 15px;
+}
+
+.card__price {
+	margin: 0 0 7px;
+
+	span {
+		font-weight: bold;
+	}
+}
+
+.card__options {
+	margin: 0;
+}
+
+.card__options {
+	font-size: $option_font_size;
+	line-height: $option_line_height;
+}
