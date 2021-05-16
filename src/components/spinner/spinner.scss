@@ -1,0 +1,62 @@
+@import '../../sass/variables';
+
+@keyframes rings-rotate {
+	0% {
+		transform: rotate(0);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes rings-reverse {
+	0% {
+		transform: rotate(0);
+	}
+	100% {
+		transform: rotate(-360deg);
+	}
+}
+
+.spinner {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	height: 100vh;
+}
+
+.spinner__rings {
+	position: relative;
+}
+.spinner__rings div {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+
+	width: 160px;
+	height: 160px;
+
+	border: 8px solid #000;
+	border-color: #3d7ec0 transparent #3d7ec0 transparent;
+	border-radius: 50%;
+
+	animation: rings-rotate 1.5s linear infinite;
+}
+.spinner__rings div:nth-child(2) {
+	top: 30px;
+	left: 30px;
+
+	width: 140px;
+	height: 140px;
+
+	border-color: transparent #cc4545 transparent #cc4545;
+
+	animation: rings-reverse 1.5s linear infinite;
+}
+.spinner__rings {
+	width: 77px;
+	height: 77px;
+
+	transform: translate(-38.5px, -38.5px) scale(0.385) translate(38.5px, 38.5px);
+}
