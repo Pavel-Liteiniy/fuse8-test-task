@@ -1,16 +1,17 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useContext } from 'react'
+
+import Context from '../context'
 
 import Filter from '../filter'
 import ErrorIndicator from '../error-indicator'
 import Spinner from '../spinner'
 import Card from '../card'
+import Button from '../button'
 
 import './relevant.scss'
 
-const Relevant = ( { api } ) => {
-  const [ error, setError ] = useState( null )
-  const [ isLoaded, setIsLoaded ] = useState( false )
-  const [ homes, setHomes ] = useState( [] )
+const Relevant = () => {
+  const { homes, error, isLoaded, pageNumber } = useContext( Context )
   const [ filter, setFilter ] = useState( '' )
 
   const filterHandler = ( value ) => {
@@ -20,18 +21,6 @@ const Relevant = ( { api } ) => {
 
     setFilter( value )
   }
-
-  useEffect( () => {
-    api.getHomes()
-      .then( homes => {
-        setIsLoaded( true )
-        setHomes( homes )
-      } )
-      .catch( error => {
-        setIsLoaded( true )
-        setError( error )
-      } )
-  }, [ api ] )
 
   if ( error ) {
     return <ErrorIndicator />
@@ -57,7 +46,7 @@ const Relevant = ( { api } ) => {
                 )
               } ) }
           </ul>
-          <a href="/" className="relevant__button">See more</a>
+          { ( pageNumber !== null ) && <Button /> }
         </div>
       </section>
     )
