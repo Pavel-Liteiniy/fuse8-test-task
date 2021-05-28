@@ -18,7 +18,12 @@ export default class Api {
 
   getHomes = async () => {
     const response = await this._load( { url: `${this._path}` } )
-    return await Api.toJSON( response )
+    const data = await Api.toJSON( response )
+    const { nextPage: pageNumber, items: homes } = data
+
+    this._path = pageNumber
+
+    return { homes, pageNumber }
   }
 
   _load = ( {
@@ -27,7 +32,7 @@ export default class Api {
     body = null,
     headers = new Headers()
   } ) => {
-    return fetch( `${this._endPoint}/${url}`, { method, body, headers } )
+    return fetch( `${this._endPoint}${url}`, { method, body, headers } )
       .then( Api.checkStatus )
       .catch( Api.catchError )
   }
